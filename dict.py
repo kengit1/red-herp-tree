@@ -1,6 +1,9 @@
+from tree import RBTree
+
 class Dictionary:
     def __init__(self):
-        self.tree = RedBlackTree()
+        
+        self.tree = RBTree()
 
     def load_dictionary(self, filename):
         with open(filename, "r") as file:
@@ -12,8 +15,11 @@ class Dictionary:
         self.tree.insert(word)
 
     def lookup_word(self, word):
-        result = self.tree.search(word)
-        if result != self.tree.NIL:
+        # Done merging the utility
+        result = self.tree.SearchTree(self.tree.root, word)
+        
+        # NIL == None
+        if result is not None:
             print("YES")
         else:
             print("NO")
