@@ -8,8 +8,13 @@ def height(root):
 def blackHeight(root):
     if root is None:
         return 0
+    leftbh=blackHeight(root.left)
+    rightbh=blackHeight(root.right)
+    if leftbh!=rightbh or leftbh==-1 or rightbh==-1:
+        print("Invalid Tree!!!")
+        return -1
 
     elif root.color == 'black':
-        return 1+max(blackHeight(root.left),blackHeight(root.right))
+        return 1+leftbh
     else:
-        return max(blackHeight(root.left),blackHeight(root.right))
+        return leftbh
