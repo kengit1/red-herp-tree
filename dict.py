@@ -8,7 +8,7 @@ class Dictionary:
     def load_dictionary(self, filename):
         with open(filename, "r") as file:
             for line in file:
-                word = line.strip()
+                word = line.strip().upper()
                 self.tree.insert(word)
 
     def insert_word(self, word):
