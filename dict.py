@@ -12,9 +12,6 @@ class Dictionary:
                 self.tree.insert(word)
 
     def insert_word(self, word):
-        if not word.isalpha():
-            print("Invalid input! Enter letters only.")
-            return
         word = word.upper()
         result = self.tree.SearchTree(self.tree.root, word)
 
